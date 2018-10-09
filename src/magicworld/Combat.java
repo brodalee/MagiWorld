@@ -12,13 +12,14 @@ import Personnage.Personnages;
  * @author alex
  */
 public class Combat {
-    
-    public void basicAttack(Personnages att, Personnages defender, int attTurn, int defTurn){
+
+    public void basicAttack(Personnages att, Personnages defender, int attTurn, int defTurn) {
+        System.out.println("Joueur " + attTurn + " utilise " + att.getBasicAttackName() + " et inflige " + att.basicAttak() + " dommages.");
         defender.looseHp(att.basicAttak());
-        System.out.println("Joueur "+defTurn+" perd "+att.basicAttak()+" point de vie");
+        System.out.println("Joueur " + defTurn + " perd " + att.basicAttak() + " point de vie");
     }
-    
-    public void specialAttack(Personnages att, Personnages defender){
-        
+
+    public void specialAttack(Personnages att, Personnages defender, int attTurn, int defTurn) {
+        att.specialAttack(defender, attTurn, defTurn);
     }
 }

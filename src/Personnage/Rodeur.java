@@ -26,7 +26,7 @@ public class Rodeur extends Personnages{
     }
 
     @Override
-    public void specialAttack(Personnages defender) {
+    public void specialAttack(Personnages defender, int attTurn, int defTurn) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

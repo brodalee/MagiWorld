@@ -9,8 +9,8 @@ package Personnage;
  *
  * @author alex
  */
-public class Guerrier extends Personnages{
-    
+public class Guerrier extends Personnages {
+
     public Guerrier(int level, int strenght, int agility, int intel) {
         super(level, strenght, agility, intel);
     }
@@ -27,8 +27,12 @@ public class Guerrier extends Personnages{
     }
 
     @Override
-    public void specialAttack(Personnages defender) {
-        
+    public void specialAttack(Personnages defender, int attTurn, int defTurn) {
+        System.out.println("Joueur " + attTurn + " utilise " + this.getSpecialAttackName() + " et inflige " + (this.getStrenght() * 2) + " point de vie");
+        defender.looseHp(this.getStrenght() * 2);
+        System.out.println("Joueur " + defTurn + " perd " + (this.getStrenght() * 2));
+        this.looseHp(this.getStrenght() / 2);
+        System.out.println("Joueur " + attTurn + " perd " + (this.getStrenght() / 2));
     }
 
     @Override
@@ -40,5 +44,5 @@ public class Guerrier extends Personnages{
     public String getSpecialAttackName() {
         return "Coup de Rage";
     }
-    
+
 }

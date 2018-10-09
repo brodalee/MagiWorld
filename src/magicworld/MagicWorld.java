@@ -34,6 +34,8 @@ public class MagicWorld {
         perso.add(this.chooseClasses());
         perso.add(this.chooseLevel());
         perso.add(this.chooseStrenght());
+        perso.add(this.chooseAgility());
+        perso.add(this.chooseIntel());
         return perso;
     }
 
