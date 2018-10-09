@@ -78,5 +78,9 @@ abstract public class Personnages implements PersonnagesInterface{
             return true;
         }
     }
+    
+    public void looseHp(int dmgs){
+        this.hp = this.getHp() - dmgs;
+    }
 
 }

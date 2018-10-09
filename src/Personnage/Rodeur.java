@@ -17,7 +17,7 @@ public class Rodeur extends Personnages{
 
     @Override
     public int basicAttak() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getAgility();
     }
     
 }
