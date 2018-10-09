@@ -116,22 +116,20 @@ public class MagicWorld {
 
     private void verifyAction() throws Exception {
         int action = this.sc.nextInt();
-        if (action != 1) {
-            if (action != 2) {
-                throw new Exception("You have to use 1 or 2.");
+        if (action == 2) {
+            if (this.turn == 1) {
+                this.fight.specialAttack(this.persos.get(0), this.persos.get(1), turn, turn + 1);
             } else {
-                if (this.turn == 1) {
-                   this.fight.basicAttack(this.persos.get(0), this.persos.get(1), turn, turn+1);
-                } else {
-                    this.fight.basicAttack(this.persos.get(1), this.persos.get(0), turn, turn-1);
-                }
+                this.fight.specialAttack(this.persos.get(1), this.persos.get(0), turn, turn - 1);
+            }
+        } else if (action == 1) {
+            if (this.turn == 1) {
+                this.fight.basicAttack(this.persos.get(0), this.persos.get(1), turn, turn + 1);
+            } else {
+                this.fight.basicAttack(this.persos.get(1), this.persos.get(0), turn, turn - 1);
             }
         } else {
-            if (this.turn == 1) {
-                this.fight.specialAttack(this.persos.get(0), this.persos.get(1), turn, turn+1);
-            } else {
-                 this.fight.specialAttack(this.persos.get(1), this.persos.get(0), turn, turn-1);
-            }
+            throw new Exception("You have to set 1 || 2");
         }
     }
 
@@ -145,6 +143,13 @@ public class MagicWorld {
                 System.out.println("Joueur 2 (" + this.persos.get(1).getHp() + " vitalié) veuillez choisir votre action (1: Attaque Basique, 2: Attaque Spéciale)");
                 this.verifyAction();
                 this.turn -= 1;
+            }
+            if(this.persos.get(0).getHp() <= 0){
+                this.end = true;
+                System.out.println("Joueur 1 a perdu !");
+            }else if(this.persos.get(1).getHp() <=0){
+                this.end = true;
+                System.out.println("Joueur 2 a perdu !");
             }
         }
     }
