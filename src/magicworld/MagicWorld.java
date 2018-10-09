@@ -23,6 +23,7 @@ public class MagicWorld {
     private final Scanner sc = new Scanner(System.in);
     private List<Personnages> persos = new ArrayList<>();
     private Combat fight = new Combat();
+    private boolean end = false;
 
     /**
      * @param args the command line arguments
@@ -112,17 +113,40 @@ public class MagicWorld {
             }
         }
     }
-    
-    private boolean verifyAction(int action){
-        if(action != 1 ){
-            return action == 2;
-        }else{
-            return true;
+
+    private void verifyAction() throws Exception {
+        int action = this.sc.nextInt();
+        if (action != 1) {
+            if (action != 2) {
+                throw new Exception("You have to use 1 or 2.");
+            } else {
+                if (this.turn == 1) {
+                   this.fight.basicAttack(this.persos.get(0), this.persos.get(1), turn, turn+1);
+                } else {
+                    this.fight.basicAttack(this.persos.get(1), this.persos.get(0), turn, turn-1);
+                }
+            }
+        } else {
+            if (this.turn == 1) {
+                this.fight.specialAttack(this.persos.get(0), this.persos.get(1), turn, turn+1);
+            } else {
+                 this.fight.specialAttack(this.persos.get(1), this.persos.get(0), turn, turn-1);
+            }
         }
     }
-    
-    public void fight(){
-        
+
+    public void fight() throws Exception {
+        while (!this.end) {
+            if (this.turn == 1) {
+                System.out.println("Joueur 1 (" + this.persos.get(0).getHp() + " vitalié) veuillez choisir votre action (1: Attaque Basique, 2: Attaque Spéciale)");
+                this.verifyAction();
+                this.turn += 1;
+            } else {
+                System.out.println("Joueur 2 (" + this.persos.get(1).getHp() + " vitalié) veuillez choisir votre action (1: Attaque Basique, 2: Attaque Spéciale)");
+                this.verifyAction();
+                this.turn -= 1;
+            }
+        }
     }
 
 }
