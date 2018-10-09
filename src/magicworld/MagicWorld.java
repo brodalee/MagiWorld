@@ -22,13 +22,17 @@ public class MagicWorld {
     private int turn = 1;
     private final Scanner sc = new Scanner(System.in);
     private List<Personnages> persos = new ArrayList<>();
+    private Combat fight = new Combat();
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
         MagicWorld magic = new MagicWorld();
         magic.verifPersonnage(magic.initPersonnage(1));
+        magic.verifPersonnage(magic.initPersonnage(2));
+        magic.fight();
     }
 
     public List<Integer> initPersonnage(int turnPlayer) throws Exception {
@@ -107,6 +111,18 @@ public class MagicWorld {
                     break;
             }
         }
+    }
+    
+    private boolean verifyAction(int action){
+        if(action != 1 ){
+            return action == 2;
+        }else{
+            return true;
+        }
+    }
+    
+    public void fight(){
+        
     }
 
 }
