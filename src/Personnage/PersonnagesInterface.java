@@ -12,4 +12,5 @@ package Personnage;
 interface PersonnagesInterface {
     public int basicAttak();
     public String getSentence();
+    public void specialAttack(Personnages defender);
 }

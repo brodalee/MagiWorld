@@ -24,5 +24,10 @@ public class Mage extends Personnages{
     public String getSentence() {
         return "Abracadabra je suis le mage joueur";
     }
+
+    @Override
+    public void specialAttack(Personnages defender) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

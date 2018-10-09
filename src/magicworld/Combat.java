@@ -16,4 +16,8 @@ public class Combat {
     public void basicAttack(Personnages att, Personnages defender){
         defender.looseHp(att.basicAttak());
     }
+    
+    public void specialAttack(Personnages att, Personnages defender){
+        
+    }
 }
