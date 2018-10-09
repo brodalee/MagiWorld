@@ -17,6 +17,7 @@ public class Guerrier extends Personnages{
 
     @Override
     public int basicAttak() {
+        System.out.println("");
         return this.getStrenght();
     }
 
@@ -27,7 +28,17 @@ public class Guerrier extends Personnages{
 
     @Override
     public void specialAttack(Personnages defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+
+    @Override
+    public String getBasicAttackName() {
+        return "Coup d’Épée";
+    }
+
+    @Override
+    public String getSpecialAttackName() {
+        return "Coup de Rage";
     }
     
 }

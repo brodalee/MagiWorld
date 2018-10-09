@@ -13,8 +13,9 @@ import Personnage.Personnages;
  */
 public class Combat {
     
-    public void basicAttack(Personnages att, Personnages defender){
+    public void basicAttack(Personnages att, Personnages defender, int attTurn, int defTurn){
         defender.looseHp(att.basicAttak());
+        System.out.println("Joueur "+defTurn+" perd "+att.basicAttak()+" point de vie");
     }
     
     public void specialAttack(Personnages att, Personnages defender){

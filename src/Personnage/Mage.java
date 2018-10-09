@@ -29,5 +29,15 @@ public class Mage extends Personnages{
     public void specialAttack(Personnages defender) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String getBasicAttackName() {
+        return "Boule de Feu";
+    }
+
+    @Override
+    public String getSpecialAttackName() {
+        return "Soin";
+    }
     
 }

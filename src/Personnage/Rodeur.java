@@ -29,5 +29,15 @@ public class Rodeur extends Personnages{
     public void specialAttack(Personnages defender) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String getBasicAttackName() {
+        return "Tir à l’Arc";
+    }
+
+    @Override
+    public String getSpecialAttackName() {
+        return "Concentration";
+    }
     
 }

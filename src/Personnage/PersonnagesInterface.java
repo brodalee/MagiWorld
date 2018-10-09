@@ -13,4 +13,6 @@ interface PersonnagesInterface {
     public int basicAttak();
     public String getSentence();
     public void specialAttack(Personnages defender);
+    public String getBasicAttackName();
+    public String getSpecialAttackName();
 }
