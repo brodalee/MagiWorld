@@ -9,7 +9,7 @@ package Personnage;
  *
  * @author alex
  */
-abstract public class Personnages {
+abstract public class Personnages implements PersonnagesInterface{
 
     private int level, hp, strenght, agility, intel;
 

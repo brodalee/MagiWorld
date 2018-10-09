@@ -14,5 +14,10 @@ public class Rodeur extends Personnages{
     public Rodeur(int level, int strenght, int agility, int intel) {
         super(level, strenght, agility, intel);
     }
+
+    @Override
+    public int basicAttak() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
