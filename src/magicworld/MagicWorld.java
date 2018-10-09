@@ -70,9 +70,18 @@ public class MagicWorld {
         System.out.println("Agilité du personnage ?");
         int agility = this.sc.nextInt();
         if(agility < 0 || agility > 100){
-            throw new Exception("You have to set Strenght between 0 and 100");
+            throw new Exception("You have to set agility between 0 and 100");
         }
         return agility;
+    }
+    
+    public int chooseIntel() throws Exception{
+        System.out.println("Intelligence du personnage ?");
+        int intel = this.sc.nextInt();
+        if(intel < 0 || intel > 100){
+            throw new Exception("You have to set intel between 0 and 100");
+        }
+        return intel;
     }
 
 }
