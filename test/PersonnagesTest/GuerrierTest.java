@@ -22,7 +22,7 @@ public class GuerrierTest {
     @Test
     public void GuerrierDescTest() throws Exception{
         Guerrier guerrier = new Guerrier(100, 100, 0, 0);
-        assertEquals(guerrier.toString(), "Woarg je suis le joueur");
+        assertEquals(guerrier.getSentence(), "Woarg je suis le joueur");
     }
     
     @Test
@@ -30,7 +30,7 @@ public class GuerrierTest {
         Guerrier guerrier = new Guerrier(100, 100, 0, 0);
         Guerrier adversaire = new Guerrier(100, 100, 0, 0);
         adversaire.looseHp(guerrier.basicAttak());
-        assertEquals(guerrier, "Joueur 1 utilise Coup d'épé et inflige 100 de dégats");
+        assertEquals(guerrier.basicAttak(), "Joueur 1 utilise Coup d'épé et inflige 100 de dégats");
     }
     
     @Test
@@ -38,6 +38,6 @@ public class GuerrierTest {
         Guerrier guerrier = new Guerrier(100, 100, 0, 0);
         Guerrier adversaire = new Guerrier(100, 100, 0, 0);
         guerrier.specialAttack(adversaire, 1, 2);
-        assertEquals(guerrier, "Joueur 1 utilise Coup de rage et inflige 200 de dégats et perd 50 points de vie");
+        assertEquals(guerrier.toString(), "Joueur 1 utilise Coup de rage et inflige 200 de dégats et perd 50 points de vie");
     }
 }

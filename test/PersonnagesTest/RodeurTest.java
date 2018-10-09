@@ -22,18 +22,22 @@ public class RodeurTest {
     @Test
     public void RodeurDescTest() throws Exception{
         Rodeur rodeur = new Rodeur(100, 0, 100, 0);
-        assertEquals(rodeur.toString(), "Oyé oyé chevalier joueur");
+        assertEquals(rodeur.getSentence(), "Oyé oyé chevalier joueur");
     }
     
     @Test
     public void RodeurBasicAttakTest() throws Exception{
         Rodeur rodeur = new Rodeur(100, 0, 100, 0);
         Rodeur adversaire = new Rodeur(100, 0, 100, 0);
+        adversaire.looseHp(rodeur.basicAttak());
+        assertEquals(rodeur.basicAttak(), 100);
     }
     
     @Test
     public void RodeurSpecialAttakTest() throws Exception{
         Rodeur rodeur = new Rodeur(100, 0, 100, 0);
         Rodeur adversaire = new Rodeur(100, 0, 100, 0);
+        rodeur.specialAttack(adversaire, 1, 2);
+        assertEquals(rodeur.toString(), "Joueur 1 utilise concentration et gagne 50 d'agilité");
     }
 }
