@@ -14,6 +14,6 @@ import Personnage.Personnages;
 public class Combat {
     
     public void basicAttack(Personnages att, Personnages defender){
-        
+        defender.looseHp(att.basicAttak());
     }
 }
