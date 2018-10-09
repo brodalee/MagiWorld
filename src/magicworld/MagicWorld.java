@@ -25,7 +25,7 @@ public class MagicWorld {
      */
     public static void main(String[] args) throws Exception {      
         MagicWorld magic = new MagicWorld();
-        magic.initPersonnage(1);
+        magic.verifPersonnage(magic.initPersonnage(1));
     }
 
     public List<Integer> initPersonnage(int turnPlayer) throws Exception {
@@ -86,6 +86,10 @@ public class MagicWorld {
             throw new Exception("You have to set intel between 0 and 100");
         }
         return intel;
+    }
+    
+    public void verifPersonnage(List<Integer> perso){
+        
     }
 
 }
