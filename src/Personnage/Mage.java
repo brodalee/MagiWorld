@@ -11,6 +11,8 @@ package Personnage;
  */
 public class Mage extends Personnages{
     
+    private final int maxHp = this.getLevel()*5;
+    
     public Mage(int level, int strenght, int agility, int intel) {
         super(level, strenght, agility, intel);
     }
@@ -27,7 +29,7 @@ public class Mage extends Personnages{
 
     @Override
     public void specialAttack(Personnages defender, int attTurn, int defTurn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.winHp(this.getLevel()/2);
     }
 
     @Override
@@ -38,6 +40,13 @@ public class Mage extends Personnages{
     @Override
     public String getSpecialAttackName() {
         return "Soin";
+    }
+    
+    private void winHp(int hp){
+        this.setHp(this.getHp()+hp);
+        if(this.getHp() > this.maxHp){
+            this.setHp(this.maxHp);
+        }
     }
     
 }

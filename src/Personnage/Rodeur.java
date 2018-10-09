@@ -5,6 +5,9 @@
  */
 package Personnage;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author alex
@@ -27,7 +30,12 @@ public class Rodeur extends Personnages{
 
     @Override
     public void specialAttack(Personnages defender, int attTurn, int defTurn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int ag =  ((int)(this.getLevel()/2))+this.getAgility();
+        try {
+            this.setAgility(ag);
+        } catch (Exception ex) {
+            Logger.getLogger(Rodeur.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
