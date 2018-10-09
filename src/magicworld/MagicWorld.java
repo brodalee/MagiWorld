@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package magicworld;
 
 import Personnage.Guerrier;
@@ -28,6 +24,7 @@ public class MagicWorld {
     /**
      * @param args the command line arguments
      * @throws java.lang.Exception
+     * Lance l'initialisation des 2 Joueurs pour ensuite, lancer le combat.
      */
     public static void main(String[] args) throws Exception {
         MagicWorld magic = new MagicWorld();
@@ -36,6 +33,13 @@ public class MagicWorld {
         magic.fight();
     }
 
+    /**
+     * 
+     * @param turnPlayer
+     * @return List<Integer> contenant les choix fait par l'utilisateur selon
+     * la classe, les caractéristiques.
+     * @throws Exception 
+     */
     public List<Integer> initPersonnage(int turnPlayer) throws Exception {
         List<Integer> perso = new ArrayList<>();
         System.out.println("Création du personnage du joueur " + turnPlayer);
@@ -47,6 +51,12 @@ public class MagicWorld {
         return perso;
     }
 
+    /**
+     * 
+     * @return int
+     * @throws Exception 
+     * Permet de choisir la classe du personnage entre 1, 2 ou 3
+     */
     public int chooseClasses() throws Exception {
         System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier, 2: Rôdeur, 3: Mage)");
         int classes = this.sc.nextInt();
@@ -60,6 +70,12 @@ public class MagicWorld {
         return classes;
     }
 
+    /**
+     * 
+     * @return int
+     * @throws Exception 
+     * Permet de choisir le niveau du personnage  entre 1 et 100
+     */
     public int chooseLevel() throws Exception {
         System.out.println("Niveau du personnage ?");
         int level = this.sc.nextInt();
@@ -69,6 +85,12 @@ public class MagicWorld {
         return level;
     }
 
+    /**
+     * 
+     * @return int
+     * @throws Exception 
+     * Permet de choisir la force du personnage entre 0 et 100
+     */
     public int chooseStrenght() throws Exception {
         System.out.println("Force du personnage ?");
         int force = this.sc.nextInt();
@@ -78,6 +100,12 @@ public class MagicWorld {
         return force;
     }
 
+    /**
+     * 
+     * @return int
+     * @throws Exception 
+     * Permet de choisir l'agilité du personnage entre 0 et 100
+     */
     public int chooseAgility() throws Exception {
         System.out.println("Agilité du personnage ?");
         int agility = this.sc.nextInt();
@@ -87,6 +115,12 @@ public class MagicWorld {
         return agility;
     }
 
+    /**
+     * 
+     * @return int
+     * @throws Exception 
+     * Permet de choisir l'intélligence du personnage entre 0 et 100
+     */
     public int chooseIntel() throws Exception {
         System.out.println("Intelligence du personnage ?");
         int intel = this.sc.nextInt();
@@ -95,7 +129,14 @@ public class MagicWorld {
         }
         return intel;
     }
-
+    
+    /**
+     * 
+     * @param perso
+     * @throws Exception 
+     * Permet d'ajouter à la liste des joueurs, un nouveau joueur selon
+     * la classe choisie
+     */
     public void verifPersonnage(List<Integer> perso) throws Exception {
         if (null != perso.get(0)) {
             switch (perso.get(0)) {
@@ -114,6 +155,12 @@ public class MagicWorld {
         }
     }
 
+    /**
+     * 
+     * @throws Exception 
+     * Permet de vérifier si l'action est bonne, si oui, alors l'attaque 
+     * choisie par l'utilisateur sera executé
+     */
     private void verifyAction() throws Exception {
         int action = this.sc.nextInt();
         if (action == 2) {
@@ -133,6 +180,12 @@ public class MagicWorld {
         }
     }
 
+    /**
+     * 
+     * @throws Exception 
+     * Methode lancé après l'initialisation des personnages. Permet de
+     * lancer le combat en tour par tour
+     */
     public void fight() throws Exception {
         while (!this.end) {
             if (this.turn == 1) {
