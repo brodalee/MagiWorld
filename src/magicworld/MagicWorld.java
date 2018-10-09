@@ -5,7 +5,10 @@
  */
 package magicworld;
 
+import Personnage.Guerrier;
+import Personnage.Mage;
 import Personnage.Personnages;
+import Personnage.Rodeur;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +26,7 @@ public class MagicWorld {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws Exception {      
+    public static void main(String[] args) throws Exception {
         MagicWorld magic = new MagicWorld();
         magic.verifPersonnage(magic.initPersonnage(1));
     }
@@ -60,36 +63,50 @@ public class MagicWorld {
         }
         return level;
     }
-    
-    public int chooseStrenght() throws Exception{
+
+    public int chooseStrenght() throws Exception {
         System.out.println("Force du personnage ?");
         int force = this.sc.nextInt();
-        if(force < 0 || force > 100){
+        if (force < 0 || force > 100) {
             throw new Exception("You have to set Strenght between 0 and 100");
         }
         return force;
     }
-    
-    public int chooseAgility() throws Exception{
+
+    public int chooseAgility() throws Exception {
         System.out.println("Agilité du personnage ?");
         int agility = this.sc.nextInt();
-        if(agility < 0 || agility > 100){
+        if (agility < 0 || agility > 100) {
             throw new Exception("You have to set agility between 0 and 100");
         }
         return agility;
     }
-    
-    public int chooseIntel() throws Exception{
+
+    public int chooseIntel() throws Exception {
         System.out.println("Intelligence du personnage ?");
         int intel = this.sc.nextInt();
-        if(intel < 0 || intel > 100){
+        if (intel < 0 || intel > 100) {
             throw new Exception("You have to set intel between 0 and 100");
         }
         return intel;
     }
-    
-    public void verifPersonnage(List<Integer> perso){
-        
+
+    public void verifPersonnage(List<Integer> perso) throws Exception {
+        if (null != perso.get(0)) {
+            switch (perso.get(0)) {
+                case 1:
+                    this.persos.add(new Guerrier(perso.get(1), perso.get(2), perso.get(3), perso.get(4)));
+                    break;
+                case 2:
+                    this.persos.add(new Rodeur(perso.get(1), perso.get(2), perso.get(3), perso.get(4)));
+                    break;
+                case 3:
+                    this.persos.add(new Mage(perso.get(1), perso.get(2), perso.get(3), perso.get(4)));
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
 }

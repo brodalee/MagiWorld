@@ -13,12 +13,13 @@ abstract public class Personnages implements PersonnagesInterface{
 
     private int level, hp, strenght, agility, intel;
 
-    public Personnages(int level, int strenght, int agility, int intel) {
+    public Personnages(int level, int strenght, int agility, int intel) throws Exception {
         this.level = level;
         this.strenght = strenght;
         this.agility = agility;
         this.intel = intel;
         this.hp = level * 5;
+        this.verifIfCaractRespectPoints();
     }
 
     public int getLevel() {
@@ -81,6 +82,13 @@ abstract public class Personnages implements PersonnagesInterface{
     
     public void looseHp(int dmgs){
         this.hp = this.getHp() - dmgs;
+    }
+    
+    private boolean verifIfCaractRespectPoints() throws Exception{
+        if(this.getAgility() + this.getIntel() + this.getStrenght() > this.level){
+            throw new Exception("You have to set the same numbers of point level as caracters point skills");
+        }
+        return true;
     }
 
 }

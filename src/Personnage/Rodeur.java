@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class Rodeur extends Personnages{
     
-    public Rodeur(int level, int strenght, int agility, int intel) {
+    public Rodeur(int level, int strenght, int agility, int intel) throws Exception {
         super(level, strenght, agility, intel);
     }
 

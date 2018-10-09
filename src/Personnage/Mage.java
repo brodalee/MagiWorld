@@ -13,7 +13,7 @@ public class Mage extends Personnages{
     
     private final int maxHp = this.getLevel()*5;
     
-    public Mage(int level, int strenght, int agility, int intel) {
+    public Mage(int level, int strenght, int agility, int intel) throws Exception {
         super(level, strenght, agility, intel);
     }
 

@@ -11,7 +11,7 @@ package Personnage;
  */
 public class Guerrier extends Personnages {
 
-    public Guerrier(int level, int strenght, int agility, int intel) {
+    public Guerrier(int level, int strenght, int agility, int intel) throws Exception {
         super(level, strenght, agility, intel);
     }
 
