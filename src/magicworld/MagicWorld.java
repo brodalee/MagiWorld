@@ -65,5 +65,14 @@ public class MagicWorld {
         }
         return force;
     }
+    
+    public int chooseAgility() throws Exception{
+        System.out.println("Agilité du personnage ?");
+        int agility = this.sc.nextInt();
+        if(agility < 0 || agility > 100){
+            throw new Exception("You have to set Strenght between 0 and 100");
+        }
+        return agility;
+    }
 
 }
