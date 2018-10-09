@@ -31,6 +31,7 @@ public class MagicWorld {
         System.out.println("Création du personnage du joueur " + turnPlayer);
         perso.add(this.chooseClasses());
         perso.add(this.chooseLevel());
+        perso.add(this.chooseStrenght());
         return perso;
     }
 
@@ -54,6 +55,15 @@ public class MagicWorld {
             throw new Exception("You have to set level between 1 and 100");
         }
         return level;
+    }
+    
+    public int chooseStrenght() throws Exception{
+        System.out.println("Force du personnage ?");
+        int force = this.sc.nextInt();
+        if(force < 0 || force > 100){
+            throw new Exception("You have to set Strenght between 0 and 100");
+        }
+        return force;
     }
 
 }
