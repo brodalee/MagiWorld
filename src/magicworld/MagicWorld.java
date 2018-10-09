@@ -5,6 +5,7 @@
  */
 package magicworld;
 
+import Personnage.Personnages;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,11 +18,12 @@ public class MagicWorld {
 
     private int turn = 1;
     private final Scanner sc = new Scanner(System.in);
+    private List<Personnages> persos = new ArrayList<>();
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {      
         MagicWorld magic = new MagicWorld();
         magic.initPersonnage(1);
     }

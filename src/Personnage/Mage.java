@@ -19,5 +19,10 @@ public class Mage extends Personnages{
     public int basicAttak() {
         return this.getIntel();
     }
+
+    @Override
+    public String getSentence() {
+        return "Abracadabra je suis le mage joueur";
+    }
     
 }

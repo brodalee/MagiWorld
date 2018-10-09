@@ -19,5 +19,10 @@ public class Guerrier extends Personnages{
     public int basicAttak() {
         return this.getStrenght();
     }
+
+    @Override
+    public String getSentence() {
+        return "Woarg je suis le guerrier joueur";
+    }
     
 }

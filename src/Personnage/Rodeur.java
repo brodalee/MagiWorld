@@ -19,5 +19,10 @@ public class Rodeur extends Personnages{
     public int basicAttak() {
         return this.getAgility();
     }
+
+    @Override
+    public String getSentence() {
+        return "Oyé oyé chevalier je suis le Rodeur joueur";
+    }
     
 }
