@@ -16,10 +16,15 @@ Quand un joueur n’a plus de point de vie, la partie est terminée et l’autre
 Chaque personnage possède 5 caractéristiques :
 
 Niveau : choisi par le joueur (min 1, max 100)
+
 Vie : égale au niveau du joueur * 5
+
 Force : choisie par le joueur (min 0, max 100)
+
 Agilité : choisie par le joueur (min 0, max 100)
+
 Intelligence : choisie par le joueur (min 0, max 100)
+
 Attention le total force + agilité + intelligence doit être égal au niveau du joueur.
 
 Par exemple, un mage niveau 18 ne peut pas avoir 5 de force et 14 d’intelligence : le total fait 19 et non 18.
