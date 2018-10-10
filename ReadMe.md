@@ -35,11 +35,21 @@ Une attaque spéciale aux effets variés.
 Voici le détail des sorts :
 
 Guerrier
+
 Attaque Basique - Coup d’Épée : Effectue des dommages égaux à la force du joueur sur l’adversaire.
+
 Attaque Spéciale - Coup de Rage : Effectue des dommages égaux à la force du joueur fois deux sur l’adversaire. Le joueur lançant l'attaque perd de la vitalité : la valeur de sa force divisée par 2.
+
+
 Rôdeur
+
 Attaque Basique - Tir à l’Arc : Effectue des dommages égaux à l’agilité du joueur sur l’adversaire.
+
 Attaque Spéciale - Concentration : Le joueur gagne son niveau divisé par 2 en agilité.
+
+
 Mage
+
 Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.
+
 Attaque Spéciale - Soin : Le joueur soigne sa vie et regagne sa quantité d’intelligence fois 2 en points de vie. Attention, il ne peut pas avoir plus de vie qu’il n’en avait au départ.
